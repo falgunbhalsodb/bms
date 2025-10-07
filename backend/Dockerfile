@@ -53,6 +53,7 @@ COPY --from=build /app/target/*.jar app.jar
 # Set environment variables
 ENV JAVA_HOME=/opt/java
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
+ENV PORT=8080
 
 # Create non-root user for security
 RUN groupadd -r spring && useradd -r -g spring spring && \
