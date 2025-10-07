@@ -1,6 +1,7 @@
 package com.bms.app.controller;
 
-
+// BookController temporarily disabled
+/*
 import com.bms.app.dto.BookRequest;
 import com.bms.app.dto.BookResponse;
 import com.bms.app.entity.Book;
@@ -55,3 +56,4 @@ public class BookController {
     }
 
 }
+*/

@@ -1,5 +1,7 @@
 package com.bms.app.service;
 
+// BookService temporarily disabled
+/*
 import com.bms.app.dto.BookRequest;
 import com.bms.app.dto.BookResponse;
 import com.bms.app.entity.Book;
@@ -62,3 +64,4 @@ public class BookService {
         bookRepository.deleteById(id);
     }
 }
+*/
