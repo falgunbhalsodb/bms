@@ -25,16 +25,10 @@ jobs:
     - name: Configure Docker
       run: gcloud auth configure-docker asia-south1-docker.pkg.dev
 
-    - name: Get Backend URL
-      id: backend-url
-      run: |
-        BACKEND_URL=$(gcloud run services describe book-backend --region=$REGION --format='value(status.url)')
-        echo "backend_url=$BACKEND_URL" >> $GITHUB_OUTPUT
-
     - name: Build and Push
       run: |
         cd frontend
-        docker build --build-arg VITE_API_URL=${{ steps.backend-url.outputs.backend_url }} -t asia-south1-docker.pkg.dev/$PROJECT_ID/book-app-repo/frontend:$GITHUB_SHA .
+        docker build --build-arg VITE_API_URL=https://book-backend-388739905575.asia-south1.run.app -t asia-south1-docker.pkg.dev/$PROJECT_ID/book-app-repo/frontend:$GITHUB_SHA .
         docker push asia-south1-docker.pkg.dev/$PROJECT_ID/book-app-repo/frontend:$GITHUB_SHA
 
     - name: Deploy to Cloud Run
@@ -43,4 +37,5 @@ jobs:
           --image asia-south1-docker.pkg.dev/$PROJECT_ID/book-app-repo/frontend:$GITHUB_SHA \
           --platform managed \
           --region $REGION \
-          --allow-unauthenticated
+          --allow-unauthenticated \
+          --port 80
