@@ -160,11 +160,13 @@
 ## 5.1 Backend Workflow & Dockerfile
     
     Create `.github/workflows/deploy-backend.yml`
+    Create  `backend/Dockerfile`
 
 ## 5.2 Frontend Workflow & Dockerfile  
     
     Create `.github/workflows/deploy-frontend.yml`
-
+    Create `frontend/Dockerfile`
+    
 # Step 6: Production Configuration
 
 ## 6.1 Update Backend application.properties
