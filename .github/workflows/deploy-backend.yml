@@ -39,5 +39,5 @@ jobs:
           --platform managed \
           --allow-unauthenticated \
           --add-cloudsql-instances ${{ secrets.DB_CONNECTION_NAME }} \
-          --set-env-vars "DB_HOST=/cloudsql/${{ secrets.DB_CONNECTION_NAME }},DB_NAME=${{ secrets.DB_NAME }},DB_USER=${{ secrets.DB_USER }},DB_PASSWORD=${{ secrets.DB_PASSWORD }},SPRING_DATASOURCE_URL=jdbc:postgresql:///bookdb?socketFactory=com.google.cloud.sql.postgres.SocketFactory&cloudSqlInstance=${{ secrets.DB_CONNECTION_NAME }}"
+          --set-env-vars "DB_HOST=/cloudsql/${{ secrets.DB_CONNECTION_NAME }},DB_NAME=${{ secrets.DB_NAME }},DB_USER=${{ secrets.DB_USER }},DB_PASSWORD=${{ secrets.DB_PASSWORD }},SPRING_DATASOURCE_URL=jdbc:postgresql:///bookdb?socketFactory=com.google.cloud.sql.postgres.SocketFactory&cloudSqlInstance=${{ secrets.DB_CONNECTION_NAME }},SPRING_PROFILES_ACTIVE=prod"
           --timeout 900
