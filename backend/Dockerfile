@@ -66,5 +66,5 @@ EXPOSE 8080
 #HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
 #    CMD ${JAVA_HOME}/bin/java -cp app.jar org.springframework.boot.loader.JarLauncher --health || exit 1
 
-# Run the application
+# Run the applications
 ENTRYPOINT ["java", "-jar", "app.jar", "--server.port=${PORT}", "--server.address=0.0.0.0"]
