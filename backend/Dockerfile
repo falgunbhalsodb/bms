@@ -68,4 +68,5 @@ EXPOSE 8080
 #     CMD ${JAVA_HOME}/bin/java -cp app.jar org.springframework.boot.loader.JarLauncher --health || exit 1
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+#ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Dserver.port=${PORT}", "-jar", "app.jar"]
