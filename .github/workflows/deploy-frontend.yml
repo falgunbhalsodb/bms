@@ -38,4 +38,9 @@ jobs:
           --platform managed \
           --region $REGION \
           --allow-unauthenticated \
+          --concurrency 80 \
+          --min-instances 0 \
+          --max-instances 10 \
+          --memory 512Mi \
+          --cpu 1 \
           --port 80
